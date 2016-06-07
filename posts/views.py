@@ -12,9 +12,9 @@ def post_create(request):
 	}
 	return render (request, "index.html",context)
 
-def post_detail(request): #retrive
+def post_detail(request,id=None): #retrive
 	#instance = Post.objects.get(id=300)  ¡Mejor la línea de abajo para controlar el error si no existe!
-	instance = get_object_or_404(Post, id=3)
+	instance = get_object_or_404(Post, id=id)
 	context = {
 		"title": instance.title,
 		"instance": instance,
